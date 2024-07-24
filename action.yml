@@ -1,4 +1,4 @@
-name: 'hostwithquantum/setup-mc'
+name: 'apecloud-inc/setup-mc'
 description: 'Setup the minio client (mc) on GitHub Actions'
 branding:
   icon: 'file'
@@ -35,7 +35,6 @@ runs:
         -H 'Cache-Control: no-cache' \
         "${{ inputs.dl-url }}" \
         -o ${{ github.action_path }}/bin/mc
-      echo "Installed mc from ${{ inputs.dl-url }}" >> $GITHUB_STEP_SUMMARY
     shell: bash
   - name: make executable
     run: chmod +x ${{ github.action_path }}/bin/mc
@@ -54,4 +53,3 @@ runs:
       ${{ inputs.alias-url }} \
       ${{ inputs.alias-access-key }} \
       ${{ inputs.alias-secret-key }}
-      echo "Configured [${{ inputs.alias-name}}](${{ inputs.alias-url }})" >> $GITHUB_STEP_SUMMARY
