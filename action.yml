@@ -27,7 +27,7 @@ runs:
   using: "composite"
   steps:
   - name: create bin directory
-    run: mkdir ${{ github.action_path }}/bin
+    run: mkdir -p ${{ github.action_path }}/bin
     shell: bash
   - name: install the client
     run: |
